@@ -10,17 +10,17 @@
         <Border>
             <VerticalStackLayout
                 Padding="18"
-                Spacing="8">
+                Spacing="10">
                 <Label
                     Text="Proporcione el peso en kilogramos:"/>
                 <Entry
-                    BackgroundColor="WhiteSmoke"
-                    x:Name="PesoEntry"/>
+                    Text="{Binding Path=Peso}"
+                    BackgroundColor="WhiteSmoke"/>
                 <Label
                     Text="Proporcione la estatura en metros:" />
                 <Entry
-                    Background="WhiteSmoke"
-                    x:Name="EstaturaEntry"/>
+                    Text="{Binding Path=Estatura}"
+                    Background="WhiteSmoke"/>
             </VerticalStackLayout>
         </Border>
         <HorizontalStackLayout
@@ -29,10 +29,10 @@
             <Button
                 Text="Calcular"
                 BackgroundColor="Green"
-                Clicked="OnCalcularButton_Clicked"/>
+                Command="{Binding Path=CalcularCommand}"/>
             <Button
                 Text="Limpiar"
-                Clicked="OnLimpiarButton_Clicked"/>
+                Command="{Binding Path=LimpiarCommand}"/>
         </HorizontalStackLayout>
         <Border>
             <VerticalStackLayout
@@ -41,7 +41,7 @@
                 <Label
                     Text="El indice de masa corporal de la persona es:"/>
                 <Label
-                    Text="33453"
+                    Text="{Binding Path=Imc}"
                     HorizontalOptions="Center"
                     FontSize="Medium"
                     FontAttributes="Bold"
@@ -50,7 +50,7 @@
                 <Label
                     Text="La situacion nutricional de la persona es:"/>
                 <Label
-                    Text="Peso normal"
+                    Text="{Binding Path=EstadoNutricional}"
                     HorizontalOptions="Center"
                     FontSize="Medium"
                     FontAttributes="Bold"
